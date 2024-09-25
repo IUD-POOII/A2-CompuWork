@@ -1,100 +1,100 @@
 package IUDigital;
 
-import java.util.Date;
-
 public class Empleado {
-    private int ID;
-    private String Nombre;
-    private String Apellido;
-    private String Direccion;
-    private String Telefono;
-    private String TipoDeEmpleado;
-    private Date FechaContratacion;
-    private String Departamento;
-    private float Salario;
-    public Empleado() {}
+    private int id;
+    private String nombre;
+    private String apellido;
+    private String telefono;
+    private String direccion;
+    private String departamento;
+    private String estado;
+    private String cargo;
+    private float salario;
 
-    public Empleado(int ID, String nombre, String apellido, String direccion, String telefono, String tipoDeEmpleado, Date fechaContratacion, String departamento, float salario) {
-        this.ID = ID;
-        Nombre = nombre;
-        Apellido = apellido;
-        Direccion = direccion;
-        Telefono = telefono;
-        TipoDeEmpleado = tipoDeEmpleado;
-        FechaContratacion = fechaContratacion;
-        Departamento = departamento;
-        Salario = salario;
+    public Empleado() {
     }
 
-    public int getID() {
-        return ID;
+    public Empleado(int id, String nombre, String apellido, String telefono, String direccion, String departamento, String estado, String cargo, float salario) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.departamento = departamento;
+        this.estado = estado;
+        this.cargo = cargo;
+        this.salario = salario;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getApellido() {
-        return Apellido;
+        return apellido;
     }
 
     public void setApellido(String apellido) {
-        Apellido = apellido;
-    }
-
-    public String getDireccion() {
-        return Direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        Direccion = direccion;
+        this.apellido = apellido;
     }
 
     public String getTelefono() {
-        return Telefono;
+        return telefono;
     }
 
     public void setTelefono(String telefono) {
-        Telefono = telefono;
+        this.telefono = telefono;
     }
 
-    public String getTipoDeEmpleado() {
-        return TipoDeEmpleado;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setTipoDeEmpleado(String tipoDeEmpleado) {
-        TipoDeEmpleado = tipoDeEmpleado;
-    }
-
-    public Date getFechaContratacion() {
-        return FechaContratacion;
-    }
-
-    public void setFechaContratacion(Date fechaContratacion) {
-        FechaContratacion = fechaContratacion;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getDepartamento() {
-        return Departamento;
+        return departamento;
     }
 
     public void setDepartamento(String departamento) {
-        Departamento = departamento;
+        this.departamento = departamento;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
 
     public float getSalario() {
-        return Salario;
+        return salario;
     }
 
     public void setSalario(float salario) {
-        Salario = salario;
+        this.salario = salario;
     }
 }
