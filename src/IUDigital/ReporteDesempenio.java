@@ -1,51 +1,52 @@
 package IUDigital;
 
+
 import java.util.Date;
 
 public class ReporteDesempenio {
-    private int ID;
-    private Date Fecha;
-    private String MetricasDesempenio;
-    private String ReferenciasEmpleado;
+    private Empleado empleado;
+    private int puntuacion;
+    private String comentario;
+    private Date fechaEvaluacion;
 
-    public ReporteDesempenio() {}
-
-    public ReporteDesempenio(int ID, Date fecha, String metricasDesempenio, String referenciasEmpleado) {
-        this.ID = ID;
-        Fecha = fecha;
-        MetricasDesempenio = metricasDesempenio;
-        ReferenciasEmpleado = referenciasEmpleado;
+    public ReporteDesempenio() {
+    }
+    public ReporteDesempenio(Empleado empleado, int puntuacion, String comentario, Date fechaEvaluacion) {
+        this.empleado = empleado;
+        this.puntuacion = puntuacion;
+        this.comentario = comentario;
+        this.fechaEvaluacion = fechaEvaluacion;
     }
 
-    public int getID() {
-        return ID;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
-    public Date getFecha() {
-        return Fecha;
+    public int getPuntuacion() {
+        return puntuacion;
     }
 
-    public void setFecha(Date fecha) {
-        Fecha = fecha;
+    public void setPuntuacion(int puntuacion) {
+        this.puntuacion = puntuacion;
     }
 
-    public String getMetricasDesempenio() {
-        return MetricasDesempenio;
+    public String getComentario() {
+        return comentario;
     }
 
-    public void setMetricasDesempenio(String metricasDesempenio) {
-        MetricasDesempenio = metricasDesempenio;
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 
-    public String getReferenciasEmpleado() {
-        return ReferenciasEmpleado;
+    public Date getFechaEvaluacion() {
+        return fechaEvaluacion;
     }
 
-    public void setReferenciasEmpleado(String referenciasEmpleado) {
-        ReferenciasEmpleado = referenciasEmpleado;
+    public void setFechaEvaluacion(Date fechaEvaluacion) {
+        this.fechaEvaluacion = fechaEvaluacion;
     }
 }
