@@ -1,56 +1,62 @@
 package IUDigital;
 
-// Author Santiago Gomez
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+public class GestionEmpleadosGUI extends JFrame {
 
-public class Main{
+    public GestionEmpleadosGUI() {
+        // Configuración de la ventana principal
+        setTitle("Sistema de Gestión de Empleados");
+        setSize(400, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        // Panel principal con botones para cada funcionalidad
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(3, 1));
+
+        // Botón para agregar empleados
+        JButton btnAgregarEmpleado = new JButton("Agregar Empleado");
+        btnAgregarEmpleado.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new AgregarEmpleadoVentana(); // Abre la ventana para agregar empleados
+            }
+        });
+
+        // Botón para crear departamento
+        JButton btnCrearDepartamento = new JButton("Crear Departamento");
+        btnCrearDepartamento.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new CrearDepartamentoVentana(); // Abre la ventana para crear departamentos
+            }
+        });
+
+        // Botón para asignar empleados a departamentos
+        JButton btnAsignarEmpleado = new JButton("Asignar Empleado a Departamento");
+        btnAsignarEmpleado.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new AsignarEmpleadoVentana(); // Abre la ventana para asignar empleados
+            }
+        });
+
+        // Agregar botones al panel
+        panel.add(btnAgregarEmpleado);
+        panel.add(btnCrearDepartamento);
+        panel.add(btnAsignarEmpleado);
+
+        // Agregar el panel a la ventana principal
+        add(panel);
+    }
 
     public static void main(String[] args) {
-        // Crear una lista para almacenar empleados
-        List<Empleado> empleados = new ArrayList<>();
-        Departamento departamento = new Departamento("IT");
-
-        // Crear empleados permanentes
-        EmpleadoPermanente empleadoPermanente = new EmpleadoPermanente(1, "Juan", "Pérez", "555-1234", "123 Main St", "IT", "Activo", "Desarrollador", 3000, "Seguro médico", 2);
-
-        // Manejo de excepciones al agregar empleado
-        try {
-            departamento.agregarEmpleado(empleadoPermanente);
-            empleadoPermanente.crear(); // Crear el empleado
-        } catch (EmpleadoException e) {
-            System.out.println("Error al agregar empleado: " + e.getMessage());
-        }
-
-        // Crear empleados temporales
-        EmpleadoTemporal empleadoTemporal = new EmpleadoTemporal(2, "Ana", "López", "555-5678", "456 Elm St", "Asistente", "Activo", "Asistente", 1500, "Contrato por 3 meses", "2024-01-01", "2024-04-01");
-
-        try {
-            departamento.agregarEmpleado(empleadoTemporal);
-            empleadoTemporal.crear(); // Crear el empleado
-        } catch (EmpleadoException e) {
-            System.out.println("Error al agregar empleado: " + e.getMessage());
-        }
-
-        // Generar reportes de desempeño
-        try {
-            ReporteDesempenio reporte1 = new ReporteDesempenio(empleadoPermanente, 85, new Date(), "Excelente desempeño en proyectos.");
-            reporte1.generarReporte();
-
-            ReporteDesempenio reporte2 = new ReporteDesempenio(empleadoTemporal, 75, new Date(), "Cumplió con los objetivos del contrato temporal.");
-            reporte2.generarReporte();
-        } catch (ReporteException e) {
-            System.out.println("Error al generar reporte: " + e.getMessage());
-        }
-
-        // Actualizar y eliminar empleados
-        empleadoPermanente.actualizar(); // Actualizar información del empleado permanente
-        empleadoTemporal.eliminar(); // Eliminar empleado temporal
-
-        // Mostrar lista de empleados después de la eliminación
-        System.out.println("\nLista de empleados después de la eliminación:");
-        departamento.listarEmpleados();
+        // Lanzar la aplicación
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new GestionEmpleadosGUI().setVisible(true);
+            }
+        });
     }
 }
