@@ -5,9 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GestionEmpleadosGUI extends JFrame {
+public class Main extends JFrame {
 
-    public GestionEmpleadosGUI() {
+    public Main() {
         // Configuración de la ventana principal
         setTitle("Sistema de Gestión de Empleados");
         setSize(400, 200);
@@ -55,7 +55,7 @@ public class GestionEmpleadosGUI extends JFrame {
         // Lanzar la aplicación
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new GestionEmpleadosGUI().setVisible(true);
+                new Main().setVisible(true);
             }
         });
     }
